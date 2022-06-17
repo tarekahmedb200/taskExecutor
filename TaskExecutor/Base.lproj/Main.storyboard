@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TaskExecutor" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baG-nu-bfM">
+                                <rect key="frame" x="87" y="299.5" width="240" height="297"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nhZ-ok-FVM">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="297"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="secondaryLabelColor"/>
+                                <constraints>
+                                    <constraint firstItem="nhZ-ok-FVM" firstAttribute="leading" secondItem="baG-nu-bfM" secondAttribute="leading" id="3lm-WB-hwC"/>
+                                    <constraint firstAttribute="bottom" secondItem="nhZ-ok-FVM" secondAttribute="bottom" id="73f-xt-VHp"/>
+                                    <constraint firstAttribute="height" constant="297" id="8QH-6s-oex"/>
+                                    <constraint firstAttribute="width" constant="240" id="Jq1-w8-hGA"/>
+                                    <constraint firstAttribute="trailing" secondItem="nhZ-ok-FVM" secondAttribute="trailing" id="bwY-tq-rwZ"/>
+                                    <constraint firstItem="nhZ-ok-FVM" firstAttribute="top" secondItem="baG-nu-bfM" secondAttribute="top" id="hUo-4M-hfi"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VRl-HH-Rix">
+                                <rect key="frame" x="95.5" y="651" width="223" height="32"/>
+                                <segments>
+                                    <segment title="Task1"/>
+                                    <segment title="Task2"/>
+                                    <segment title="Task3"/>
+                                    <segment title="Task4"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="LJB-ye-9pB"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="baG-nu-bfM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="40u-wo-sSx"/>
+                            <constraint firstItem="baG-nu-bfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CRH-ee-dEL"/>
+                            <constraint firstItem="VRl-HH-Rix" firstAttribute="top" secondItem="baG-nu-bfM" secondAttribute="bottom" constant="54.5" id="rJt-4O-MqF"/>
+                            <constraint firstItem="VRl-HH-Rix" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vSj-9O-9NU"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="taskStackViewContainer" destination="nhZ-ok-FVM" id="SZo-qQ-53j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="85.714285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
